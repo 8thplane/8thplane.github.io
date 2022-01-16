@@ -12,10 +12,12 @@ tags:
 
 1. 필요한 라이브러리 설치
 
-library(foreign)
-library(psych)
-library(lawstat)
-library(ggplot2)
+```
+ library(foreign) 
+ library(psych) 
+ library(lawstat) 
+ library(ggplot2) 
+```
 
 
 ```{r setup, include=FALSE,  }
