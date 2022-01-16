@@ -6,7 +6,16 @@
     <description>Recent content on Methods Matter R code site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-KR</language>
-    <lastBuildDate>Fri, 30 Dec 2016 21:49:57 -0700</lastBuildDate><atom:link href="https://8thplane.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 01 Jan 2022 21:49:57 -0700</lastBuildDate><atom:link href="https://8thplane.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>A Plain Markdown Post</title>
+      <link>https://8thplane.github.io/2022/01/01/a-plain-markdown-post/</link>
+      <pubDate>Sat, 01 Jan 2022 21:49:57 -0700</pubDate>
+      
+      <guid>https://8thplane.github.io/2022/01/01/a-plain-markdown-post/</guid>
+      <description>   Stata용 데이터 읽기    setwd(&amp;quot;D:/Methods-Matter/Rcode/Chapter_04/&amp;quot;) install.packages(&amp;quot;foreign&amp;quot;) install.packages(&amp;quot;Hmisc&amp;quot;) library(foreign) library(Hmisc) nyvoucher &amp;lt;- read.dta(&amp;quot;../stata_data/ch4_nyvoucher.dta&amp;quot;) str(nyvoucher) head(nyvoucher) summary(nyvoucher) describe(nyvoucher) </description>
+    </item>
+    
     <item>
       <title>A Plain Markdown Post</title>
       <link>https://8thplane.github.io/2016/12/30/a-plain-markdown-post/</link>

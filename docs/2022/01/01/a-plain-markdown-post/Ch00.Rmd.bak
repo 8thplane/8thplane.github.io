@@ -1,0 +1,29 @@
+---
+title: 'Chapter00 데이터 읽어오기'
+output: html_notebook
+---
+
+>> 1. Stata용 데이터 읽기
+
+```{r setup, include=FALSE}
+
+setwd("D:/Methods-Matter/Rcode/Chapter_04/")
+install.packages("foreign")
+install.packages("Hmisc")
+
+```
+
+```{r}
+
+library(foreign)
+library(Hmisc)
+
+nyvoucher <- read.dta("../stata_data/ch4_nyvoucher.dta")
+
+str(nyvoucher)
+
+head(nyvoucher)
+summary(nyvoucher)
+describe(nyvoucher)
+```
+
