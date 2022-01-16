@@ -22,6 +22,11 @@
 
 
 
+
+<link href='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+
+
+
 <link rel="stylesheet" href="/css/fonts.css" media="all">
 <link rel="stylesheet" href="/css/main.css" media="all">
 
@@ -57,7 +62,7 @@
 
   <article class="article">
     
-    <span class="article-duration">0 min read</span>
+    <span class="article-duration">4 min read</span>
     
 
     <h1 class="article-title">Methods Matter : Rcode 4.investigator-Designed Randomized Experiments</h1>
@@ -71,6 +76,152 @@
 <script src="https://8thplane.github.io/2022/01/15/methods-matter-rcode-4-investigator-designed-randomized-experiments/index_files/header-attrs/header-attrs.js"></script>
 
 
+<ol style="list-style-type: decimal">
+<li><p>필요한 라이브러리 설치
+library(foreign)
+library(psych)
+library(lawstat)
+library(ggplot2)</p></li>
+<li><p>STATA 데이터 읽어오기</p></li>
+</ol>
+<pre class="r"><code>nyvoucher &lt;- read.dta(&quot;ch4_nyvoucher.dta&quot;)
+attach(nyvoucher)</code></pre>
+<ol start="3" style="list-style-type: decimal">
+<li>분포 확인하기(그래프)</li>
+</ol>
+<pre class="r"><code>voucher.f &lt;- factor(voucher, levels= c(0,1),
+                    labels = c(&quot;0 non voucher&quot;, &quot;1 voucher&quot;))
+v_plot &lt;- ggplot(nyvoucher, aes(x=post_ach, fill=voucher.f, color=voucher.f)) 
+v_plot + geom_histogram(binwidth = 5, alpha = 0.25, position=&quot;identity&quot;)</code></pre>
+<p><img src="https://8thplane.github.io/2022/01/15/methods-matter-rcode-4-investigator-designed-randomized-experiments/index_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<ol start="4" style="list-style-type: decimal">
+<li>t-test (동분산성가정: var.equal = TRUE)</li>
+</ol>
+<pre class="r"><code>lawstat::levene.test(post_ach, voucher)</code></pre>
+<pre><code>## 
+##  Modified robust Brown-Forsythe Levene-type test based on the absolute
+##  deviations from the median
+## 
+## data:  post_ach
+## Test Statistic = 2.8199, p-value = 0.0937</code></pre>
+<pre class="r"><code>t.test(post_ach~voucher, var.equal = TRUE)</code></pre>
+<pre><code>## 
+##  Two Sample t-test
+## 
+## data:  post_ach by voucher
+## t = -2.9112, df = 519, p-value = 0.003755
+## alternative hypothesis: true difference in means between group 0 and group 1 is not equal to 0
+## 95 percent confidence interval:
+##  -8.204552 -1.592998
+## sample estimates:
+## mean in group 0 mean in group 1 
+##        21.13043        26.02921</code></pre>
+<pre class="r"><code>describe(nyvoucher[2:4])</code></pre>
+<pre><code>##          vars   n  mean    sd median trimmed   mad min max range  skew kurtosis
+## voucher     1 521  0.56  0.50    1.0    0.57  0.00   0   1     1 -0.24    -1.95
+## pre_ach     2 521 20.16 18.26   15.5   17.56 15.57   0  92    92  1.26     1.35
+## post_ach    3 521 23.87 19.21   18.0   21.47 17.05   0  89    89  1.04     0.52
+##            se
+## voucher  0.02
+## pre_ach  0.80
+## post_ach 0.84</code></pre>
+<pre class="r"><code>describeBy(nyvoucher[2:4], group=voucher)</code></pre>
+<pre><code>## 
+##  Descriptive statistics by group 
+## group: 0
+##          vars   n  mean    sd median trimmed   mad min  max range skew kurtosis
+## voucher     1 230  0.00  0.00   0.00    0.00  0.00   0  0.0   0.0  NaN      NaN
+## pre_ach     2 230 19.51 17.66  13.75   17.04 15.20   0 87.5  87.5 1.17     0.98
+## post_ach    3 230 21.13 18.17  16.00   18.59 14.83   0 84.5  84.5 1.20     0.89
+##            se
+## voucher  0.00
+## pre_ach  1.16
+## post_ach 1.20
+## ------------------------------------------------------------ 
+## group: 1
+##          vars   n  mean    sd median trimmed   mad min max range skew kurtosis
+## voucher     1 291  1.00  0.00      1    1.00  0.00 1.0   1   0.0  NaN      NaN
+## pre_ach     2 291 20.68 18.72     16   17.97 15.57 0.0  92  92.0 1.30     1.49
+## post_ach    3 291 26.03 19.75     22   23.82 20.02 0.5  89  88.5 0.93     0.29
+##            se
+## voucher  0.00
+## pre_ach  1.10
+## post_ach 1.16</code></pre>
+<ol start="5" style="list-style-type: decimal">
+<li>회귀분석 (post_ach~voucher)</li>
+</ol>
+<pre class="r"><code>fit_M1 &lt;- lm(post_ach~voucher, data=nyvoucher)
+summary(fit_M1)</code></pre>
+<pre><code>## 
+## Call:
+## lm(formula = post_ach ~ voucher, data = nyvoucher)
+## 
+## Residuals:
+##    Min     1Q Median     3Q    Max 
+## -25.53 -15.03  -4.63  10.47  63.37 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)   21.130      1.258  16.802  &lt; 2e-16 ***
+## voucher        4.899      1.683   2.911  0.00375 ** 
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 19.07 on 519 degrees of freedom
+## Multiple R-squared:  0.01607,    Adjusted R-squared:  0.01417 
+## F-statistic: 8.475 on 1 and 519 DF,  p-value: 0.003755</code></pre>
+<pre class="r"><code>anova(fit_M1)</code></pre>
+<pre><code>## Analysis of Variance Table
+## 
+## Response: post_ach
+##            Df Sum Sq Mean Sq F value   Pr(&gt;F)   
+## voucher     1   3083 3082.89  8.4752 0.003755 **
+## Residuals 519 188788  363.75                    
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<pre class="r"><code>confint(fit_M1, level=0.95) # CIs for model parameters</code></pre>
+<pre><code>##                 2.5 %    97.5 %
+## (Intercept) 18.659842 23.601028
+## voucher      1.592998  8.204552</code></pre>
+<ol start="6" style="list-style-type: decimal">
+<li>회귀분석 (post_ach~voucher+pre_ach)</li>
+</ol>
+<pre class="r"><code>fit_M2 &lt;- lm(post_ach~voucher+pre_ach, data=nyvoucher)
+summary(fit_M2)</code></pre>
+<pre><code>## 
+## Call:
+## lm(formula = post_ach ~ voucher + pre_ach, data = nyvoucher)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -47.337  -9.533  -2.124   7.973  59.781 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)  7.71888    1.16298   6.637 8.08e-11 ***
+## voucher      4.09761    1.26873   3.230  0.00132 ** 
+## pre_ach      0.68731    0.03454  19.897  &lt; 2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 14.37 on 518 degrees of freedom
+## Multiple R-squared:  0.4423, Adjusted R-squared:  0.4401 
+## F-statistic: 205.4 on 2 and 518 DF,  p-value: &lt; 2.2e-16</code></pre>
+<pre class="r"><code>anova(fit_M2)</code></pre>
+<pre><code>## Analysis of Variance Table
+## 
+## Response: post_ach
+##            Df Sum Sq Mean Sq F value    Pr(&gt;F)    
+## voucher     1   3083    3083  14.924 0.0001261 ***
+## pre_ach     1  81780   81780 395.881 &lt; 2.2e-16 ***
+## Residuals 518 107007     207                      
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<pre class="r"><code>confint(fit_M2, level=0.95) # CIs for model parameters</code></pre>
+<pre><code>##                2.5 %     97.5 %
+## (Intercept) 5.434143 10.0036097
+## voucher     1.605120  6.5900969
+## pre_ach     0.619449  0.7551759</code></pre>
 
     </div>
   </article>
@@ -93,6 +244,18 @@
 
     </div>
     
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/r.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+<script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+
+
 
     
 
