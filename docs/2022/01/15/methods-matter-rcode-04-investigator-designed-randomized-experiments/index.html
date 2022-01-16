@@ -1,15 +1,79 @@
----
-title: 'Methods Matter : Rcode 04. investigator-Designed Randomized Experiments'
-author: Jong Hoon Kim, PH. D.
-date: '2022-01-15'
-slug: methods-matter-rcode-04-investigator-designed-randomized-experiments
-categories:
-  - R
-tags:
-  - R Markdown
----
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.92.0" />
 
-<script src="{{< blogdown/postref >}}index_files/header-attrs/header-attrs.js"></script>
+
+<title>Methods Matter : Rcode 04. investigator-Designed Randomized Experiments - Methods Matter R code site</title>
+<meta property="og:title" content="Methods Matter : Rcode 04. investigator-Designed Randomized Experiments - Methods Matter R code site">
+
+
+  <link href='https://8thplane.github.io/favicon.ico' rel='icon' type='image/x-icon'/>
+
+
+
+  
+
+
+
+
+
+
+
+
+<link href='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+
+
+
+<link rel="stylesheet" href="/css/fonts.css" media="all">
+<link rel="stylesheet" href="/css/main.css" media="all">
+
+
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="/" class="nav-logo">
+    <img src="/images/logo.png"
+         width="50"
+         height="50"
+         alt="Logo">
+  </a>
+
+  <ul class="nav-links">
+    
+    <li><a href="/about/">About</a></li>
+    
+    <li><a href="https://github.com/8thplane/blogdown">GitHub</a></li>
+    
+    <li><a href="https://8thplane.github.com/">SEM:lavvan</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+
+  <article class="article">
+    
+    <span class="article-duration">4 min read</span>
+    
+
+    <h1 class="article-title">Methods Matter : Rcode 04. investigator-Designed Randomized Experiments</h1>
+
+    
+    <span class="article-date">2022-01-15</span>
+    
+
+    <div class="article-content">
+      
+<script src="https://8thplane.github.io/2022/01/15/methods-matter-rcode-04-investigator-designed-randomized-experiments/index_files/header-attrs/header-attrs.js"></script>
 
 
 <ol style="list-style-type: decimal">
@@ -31,7 +95,7 @@ attach(nyvoucher)</code></pre>
                     labels = c(&quot;0 non voucher&quot;, &quot;1 voucher&quot;))
 v_plot &lt;- ggplot(nyvoucher, aes(x=post_ach, fill=voucher.f, color=voucher.f)) 
 v_plot + geom_histogram(binwidth = 5, alpha = 0.25, position=&quot;identity&quot;)</code></pre>
-<p><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p><img src="https://8thplane.github.io/2022/01/15/methods-matter-rcode-04-investigator-designed-randomized-experiments/index_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
 <ol start="4" style="list-style-type: decimal">
 <li>t-test (동분산성가정: var.equal = TRUE)</li>
 </ol>
@@ -160,3 +224,44 @@ summary(fit_M2)</code></pre>
 ## (Intercept) 5.434143 10.0036097
 ## voucher     1.605120  6.5900969
 ## pre_ach     0.619449  0.7551759</code></pre>
+
+    </div>
+  </article>
+
+  
+
+
+</main>
+
+      <footer class="footer">
+        <ul class="footer-links">
+          <li>
+            <a href="/index.xml" type="application/rss+xml" target="_blank">RSS feed</a>
+          </li>
+          <li>
+            <a href="https://gohugo.io/" class="footer-links-kudos">Made with <img src="/images/hugo-logo.png" alt="Img link to Hugo website" width="22" height="22"></a>
+          </li>
+        </ul>
+      </footer>
+
+    </div>
+    
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/r.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+<script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+
+
+
+    
+
+    
+  </body>
+</html>
+

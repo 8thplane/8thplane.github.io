@@ -8,14 +8,13 @@
     <language>ko-KR</language>
     <lastBuildDate>Sat, 15 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://8thplane.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Methods Matter : Rcode 4.investigator-Designed Randomized Experiments</title>
-      <link>https://8thplane.github.io/2022/01/15/methods-matter-rcode-4-investigator-designed-randomized-experiments/</link>
+      <title>Methods Matter : Rcode 04. investigator-Designed Randomized Experiments</title>
+      <link>https://8thplane.github.io/2022/01/15/methods-matter-rcode-04-investigator-designed-randomized-experiments/</link>
       <pubDate>Sat, 15 Jan 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://8thplane.github.io/2022/01/15/methods-matter-rcode-4-investigator-designed-randomized-experiments/</guid>
-      <description>필요한 라이브러리 설치library(foreign)library(psych)library(lawstat)library(ggplot2)
-STATA 데이터 읽어오기
-nyvoucher &amp;lt;- read.dta(&amp;quot;ch4_nyvoucher.dta&amp;quot;)attach(nyvoucher)분포 확인하기(그래프)voucher.f &amp;lt;- factor(voucher, levels= c(0,1),labels = c(&amp;quot;0 non voucher&amp;quot;, &amp;quot;1 voucher&amp;quot;))v_plot &amp;lt;- ggplot(nyvoucher, aes(x=post_ach, fill=voucher.f, color=voucher.f)) v_plot + geom_histogram(binwidth = 5, alpha = 0.25, position=&amp;quot;identity&amp;quot;)t-test (동분산성가정: var.equal = TRUE)lawstat::levene.test(post_ach, voucher)## ## Modified robust Brown-Forsythe Levene-type test based on the absolute## deviations from the median## ## data: post_ach## Test Statistic = 2.</description>
+      <guid>https://8thplane.github.io/2022/01/15/methods-matter-rcode-04-investigator-designed-randomized-experiments/</guid>
+      <description>필요한 라이브러리 설치library(foreign)library(psych)library(lawstat)library(ggplot2)
+STATA 데이터 읽어오기nyvoucher &amp;lt;- read.dta(&amp;quot;ch4_nyvoucher.dta&amp;quot;)attach(nyvoucher)분포 확인하기(그래프)voucher.f &amp;lt;- factor(voucher, levels= c(0,1),labels = c(&amp;quot;0 non voucher&amp;quot;, &amp;quot;1 voucher&amp;quot;))v_plot &amp;lt;- ggplot(nyvoucher, aes(x=post_ach, fill=voucher.f, color=voucher.f)) v_plot + geom_histogram(binwidth = 5, alpha = 0.25, position=&amp;quot;identity&amp;quot;)t-test (동분산성가정: var.equal = TRUE)lawstat::levene.test(post_ach, voucher)## ## Modified robust Brown-Forsythe Levene-type test based on the absolute## deviations from the median## ## data: post_ach## Test Statistic = 2.</description>
     </item>
     
     <item>
@@ -29,11 +28,11 @@ blogdown. The theme was forked from @jrutheiser/hugo-lithium-theme and modified 
     </item>
     
     <item>
-      <title>Methods Matter : reading data </title>
-      <link>https://8thplane.github.io/2022/01/01/methods-matter-reading-data/</link>
+      <title>Methods Matter : Rcode 00. reading data </title>
+      <link>https://8thplane.github.io/2022/01/01/methods-matter-rcode-00-reading-data/</link>
       <pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://8thplane.github.io/2022/01/01/methods-matter-reading-data/</guid>
+      <guid>https://8thplane.github.io/2022/01/01/methods-matter-rcode-00-reading-data/</guid>
       <description>Stata용 데이터 읽기library(foreign)library(Hmisc)
 nyvoucher &amp;lt;- read.dta(&amp;quot;ch4_nyvoucher.dta&amp;quot;)str(nyvoucher)## &amp;#39;data.frame&amp;#39;: 521 obs. of 4 variables:## $ s_id : num 42 194 218 261 304 323 339 348 349 386 ...## $ voucher : num 0 0 1 1 1 1 1 1 1 0 ...## $ pre_ach : num 74 7.5 2.5 0 11 8.5 0 37 71 24 ...## $ post_ach: num 83 4 3.</description>
     </item>

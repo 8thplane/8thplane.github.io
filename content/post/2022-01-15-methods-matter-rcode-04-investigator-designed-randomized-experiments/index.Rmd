@@ -1,19 +1,22 @@
 ---
-title: 'Methods Matter : Rcode 4.investigator-Designed Randomized Experiments'
+title: 'Methods Matter : Rcode 04. investigator-Designed Randomized Experiments'
 author: Jong Hoon Kim, PH. D.
 date: '2022-01-15'
-slug: methods-matter-rcode-4-investigator-designed-randomized-experiments
+slug: methods-matter-rcode-04-investigator-designed-randomized-experiments
 categories:
   - R
 tags:
   - R Markdown
 ---
 
+
 1. 필요한 라이브러리 설치
+
 library(foreign)
 library(psych)
 library(lawstat)
 library(ggplot2)
+
 
 ```{r setup, include=FALSE,  }
 library(foreign)
