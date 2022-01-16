@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.92.0" />
+
+
+<title>Methods Matter : reading data  - Methods Matter R code site</title>
+<meta property="og:title" content="Methods Matter : reading data  - Methods Matter R code site">
+
+
+  <link href='https://8thplane.github.io/favicon.ico' rel='icon' type='image/x-icon'/>
+
+
+
+  
+
+
+
+
+
+
+
+
+<link href='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+
+
+
+<link rel="stylesheet" href="/css/fonts.css" media="all">
+<link rel="stylesheet" href="/css/main.css" media="all">
+
+
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="/" class="nav-logo">
+    <img src="/images/logo.png"
+         width="50"
+         height="50"
+         alt="Logo">
+  </a>
+
+  <ul class="nav-links">
+    
+    <li><a href="/about/">About</a></li>
+    
+    <li><a href="https://www.facebook.com/jonghoon.kim.967">Facebook</a></li>
+    
+    <li><a href="https://github.com/8thplane/blogdown">GitHub</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+
+  <article class="article">
+    
+    <span class="article-duration">3 min read</span>
+    
+
+    <h1 class="article-title">Methods Matter : reading data </h1>
+
+    
+    <span class="article-date">2022-01-01</span>
+    
+
+    <div class="article-content">
+      
+<script src="https://8thplane.github.io/2022/01/01/methods-matter-reading-data/index_files/header-attrs/header-attrs.js"></script>
+
+
+<ol style="list-style-type: decimal">
+<li>Stata용 데이터 읽기</li>
+</ol>
+<p>library(foreign)
+library(Hmisc)</p>
+<pre class="r"><code>nyvoucher &lt;- read.dta(&quot;ch4_nyvoucher.dta&quot;)
+
+str(nyvoucher)</code></pre>
+<pre><code>## &#39;data.frame&#39;:    521 obs. of  4 variables:
+##  $ s_id    : num  42 194 218 261 304 323 339 348 349 386 ...
+##  $ voucher : num  0 0 1 1 1 1 1 1 1 0 ...
+##  $ pre_ach : num  74 7.5 2.5 0 11 8.5 0 37 71 24 ...
+##  $ post_ach: num  83 4 3.5 26.5 2 15 23.5 52 60 13 ...
+##  - attr(*, &quot;datalabel&quot;)= chr &quot;&quot;
+##  - attr(*, &quot;time.stamp&quot;)= chr &quot;13 Oct 2010 11:37&quot;
+##  - attr(*, &quot;formats&quot;)= chr [1:4] &quot;%7.0g&quot; &quot;%9.0g&quot; &quot;%9.0g&quot; &quot;%9.0g&quot;
+##  - attr(*, &quot;types&quot;)= int [1:4] 255 254 254 254
+##  - attr(*, &quot;val.labels&quot;)= chr [1:4] &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot;
+##  - attr(*, &quot;var.labels&quot;)= chr [1:4] &quot;student id&quot; &quot;&quot; &quot;&quot; &quot;&quot;
+##  - attr(*, &quot;expansion.fields&quot;)=List of 8
+##   ..$ : chr [1:3] &quot;_dta&quot; &quot;ReS_Xij&quot; &quot;q4_f q4_m q4_l tempnam q4_g s_id public q4_s q4_c&quot;
+##   ..$ : chr [1:3] &quot;_dta&quot; &quot;ReS_str&quot; &quot;0&quot;
+##   ..$ : chr [1:3] &quot;_dta&quot; &quot;ReS_jv&quot; &quot;1 2 3 4 5 6 7 8 9&quot;
+##   ..$ : chr [1:3] &quot;_dta&quot; &quot;ReS_j&quot; &quot;kid_numb&quot;
+##   ..$ : chr [1:3] &quot;_dta&quot; &quot;ReS_ver&quot; &quot;v.2&quot;
+##   ..$ : chr [1:3] &quot;_dta&quot; &quot;ReS_i&quot; &quot;mpr_fam&quot;
+##   ..$ : chr [1:3] &quot;_dta&quot; &quot;strata&quot; &quot;s_strata&quot;
+##   ..$ : chr [1:3] &quot;_dta&quot; &quot;pweight&quot; &quot;r_weight2&quot;
+##  - attr(*, &quot;version&quot;)= int 12</code></pre>
+<pre class="r"><code>head(nyvoucher)</code></pre>
+<pre><code>##   s_id voucher pre_ach post_ach
+## 1   42       0    74.0     83.0
+## 2  194       0     7.5      4.0
+## 3  218       1     2.5      3.5
+## 4  261       1     0.0     26.5
+## 5  304       1    11.0      2.0
+## 6  323       1     8.5     15.0</code></pre>
+<pre class="r"><code>summary(nyvoucher)</code></pre>
+<pre><code>##       s_id          voucher          pre_ach         post_ach    
+##  Min.   :   42   Min.   :0.0000   Min.   : 0.00   Min.   : 0.00  
+##  1st Qu.: 4187   1st Qu.:0.0000   1st Qu.: 6.50   1st Qu.: 8.00  
+##  Median :11141   Median :1.0000   Median :15.50   Median :18.00  
+##  Mean   :10436   Mean   :0.5585   Mean   :20.16   Mean   :23.87  
+##  3rd Qu.:15928   3rd Qu.:1.0000   3rd Qu.:28.50   3rd Qu.:35.00  
+##  Max.   :21825   Max.   :1.0000   Max.   :92.00   Max.   :89.00</code></pre>
+<pre class="r"><code>describe(nyvoucher)</code></pre>
+<pre><code>## nyvoucher 
+## 
+##  4  Variables      521  Observations
+## --------------------------------------------------------------------------------
+## s_id 
+##        n  missing distinct     Info     Mean      Gmd      .05      .10 
+##      521        0      521        1    10436     7638      913     1535 
+##      .25      .50      .75      .90      .95 
+##     4187    11141    15928    19371    20728 
+## 
+## lowest :    42   194   218   261   304, highest: 21796 21808 21814 21816 21825
+## --------------------------------------------------------------------------------
+## voucher 
+##        n  missing distinct     Info      Sum     Mean      Gmd 
+##      521        0        2     0.74      291   0.5585   0.4941 
+## 
+## --------------------------------------------------------------------------------
+## pre_ach 
+##        n  missing distinct     Info     Mean      Gmd      .05      .10 
+##      521        0      123        1    20.16    19.47      0.5      1.5 
+##      .25      .50      .75      .90      .95 
+##      6.5     15.5     28.5     45.0     57.5 
+## 
+## lowest :  0.0  0.5  1.0  1.5  2.0, highest: 82.5 84.0 84.5 87.5 92.0
+## --------------------------------------------------------------------------------
+## post_ach 
+##        n  missing distinct     Info     Mean      Gmd      .05      .10 
+##      521        0      131        1    23.87     20.9      2.5      4.0 
+##      .25      .50      .75      .90      .95 
+##      8.0     18.0     35.0     52.0     60.5 
+## 
+## lowest :  0.0  0.5  1.0  1.5  2.0, highest: 82.0 83.0 84.5 86.5 89.0
+## --------------------------------------------------------------------------------</code></pre>
+
+    </div>
+  </article>
+
+  
+
+
+</main>
+
+      <footer class="footer">
+        <ul class="footer-links">
+          <li>
+            <a href="/index.xml" type="application/rss+xml" target="_blank">RSS feed</a>
+          </li>
+          <li>
+            <a href="https://gohugo.io/" class="footer-links-kudos">Made with <img src="/images/hugo-logo.png" alt="Img link to Hugo website" width="22" height="22"></a>
+          </li>
+        </ul>
+      </footer>
+
+    </div>
+    
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/r.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+<script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+
+
+
+    
+<script src="/js/math-code.js"></script>
+<script async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+    
+  </body>
+</html>
+

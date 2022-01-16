@@ -1,0 +1,34 @@
+---
+title: 'Methods Matter : reading data '
+author: Jong Hoon Kim
+date: '2022-01-01'
+slug: methods-matter-reading-data
+categories:
+  - R
+tags:
+  - R Markdown
+---
+
+
+1. Stata용 데이터 읽기
+
+library(foreign)
+library(Hmisc)
+
+```{r setup, include=FALSE,  }
+
+library(foreign)
+library(Hmisc)
+
+```
+
+```{r}
+
+nyvoucher <- read.dta("ch4_nyvoucher.dta")
+
+str(nyvoucher)
+
+head(nyvoucher)
+summary(nyvoucher)
+describe(nyvoucher)
+```
