@@ -19,6 +19,16 @@
     </item>
     
     <item>
+      <title>About</title>
+      <link>https://8thplane.github.io/about/</link>
+      <pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://8thplane.github.io/about/</guid>
+      <description>이 공간은 R과 markdown을 기반으로 연구의 재현성 및 효율화를 위해 준비하는 공간입니다. 관심분야는 교육에 대한 이론적 탐색과 혁신입니다. 현재 SEM, LGM , Causal Inference을 공부합니다. 8thplane는 8번 대패를 의미합니다.
+blogdown. The theme was forked from @jrutheiser/hugo-lithium-theme and modified by Yihui Xie.</description>
+    </item>
+    
+    <item>
       <title>Methods Matter : reading data </title>
       <link>https://8thplane.github.io/2022/01/01/methods-matter-reading-data/</link>
       <pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate>
@@ -26,15 +36,6 @@
       <guid>https://8thplane.github.io/2022/01/01/methods-matter-reading-data/</guid>
       <description>Stata용 데이터 읽기library(foreign)library(Hmisc)
 nyvoucher &amp;lt;- read.dta(&amp;quot;ch4_nyvoucher.dta&amp;quot;)str(nyvoucher)## &amp;#39;data.frame&amp;#39;: 521 obs. of 4 variables:## $ s_id : num 42 194 218 261 304 323 339 348 349 386 ...## $ voucher : num 0 0 1 1 1 1 1 1 1 0 ...## $ pre_ach : num 74 7.5 2.5 0 11 8.5 0 37 71 24 ...## $ post_ach: num 83 4 3.</description>
-    </item>
-    
-    <item>
-      <title>About</title>
-      <link>https://8thplane.github.io/about/</link>
-      <pubDate>Thu, 05 May 2016 21:48:51 -0700</pubDate>
-      
-      <guid>https://8thplane.github.io/about/</guid>
-      <description>This is a &amp;ldquo;hello world&amp;rdquo; example website for the blogdown package. The theme was forked from @jrutheiser/hugo-lithium-theme and modified by Yihui Xie.</description>
     </item>
     
   </channel>

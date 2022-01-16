@@ -1,6 +1,6 @@
 ---
 title: 'Methods Matter : reading data '
-author: Jong Hoon Kim
+author: Jong Hoon Kim, PH. D.
 date: '2022-01-01'
 slug: methods-matter-reading-data
 categories:
