@@ -1,0 +1,28 @@
+---
+title: 'Ceteris Paribus: Public vs. Private University'
+author: Jong Hoon Kim, Ph. D.
+date: '2022-01-17'
+slug: ceteris-paribus-public-vs-private-university
+categories:
+  - R
+tags:
+  - R Markdown
+---
+
+
+Marginal Revolution University
+Mastering Econometrics with Joshua Angrist (MIT)
+
+[Econometrics: The Path from Cause to Effect](https://youtu.be/WwW8y5dZs80)
+
+[Ceteris Paribus: Public vs. Private University](https://youtu.be/iPBV3BlV7jk)
+
+[Selection Bias: Will You Make More Going to a Private University?](https://youtu.be/6YrIDhaUQOE)
+
+[Randomized Trials: The Ideal Weapon](https://youtu.be/eGRd8jBdNYg)
+
+[How to Read Economics Research Papers: Randomized Controlled Trials (RCTs)](https://youtu.be/s-_3s3OMeqs)
+
+[Introduction to Instrumental Variables (IV)](https://youtu.be/eoJUPd6104Q)
+
+[Introduction to Differences-in-Differences](https://youtu.be/eiffOVbYvNc)
