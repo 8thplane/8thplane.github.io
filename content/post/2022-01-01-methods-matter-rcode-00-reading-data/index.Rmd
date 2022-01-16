@@ -2,7 +2,7 @@
 title: 'Methods Matter : reading data '
 author: Jong Hoon Kim, PH. D.
 date: '2022-01-01'
-slug: methods-matter-reading-data
+slug: methods-matter-rcode-00-reading-data
 categories:
   - R
 tags:
