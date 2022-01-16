@@ -6,7 +6,19 @@
     <description>Recent content in R on Methods Matter R code site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-KR</language>
-    <lastBuildDate>Sat, 15 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://8thplane.github.io/categories/r/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 16 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://8thplane.github.io/categories/r/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Methods Matter : Chapter 04. Investigator-Designed Randomized Experiments</title>
+      <link>https://8thplane.github.io/2022/01/16/methods-matter-chapter04-investigator-designed-randomized/</link>
+      <pubDate>Sun, 16 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://8thplane.github.io/2022/01/16/methods-matter-chapter04-investigator-designed-randomized/</guid>
+      <description>이 장의 내용 발췌는 James H. Steiger 교수의 강의 슬라이드로 대체하고자 한다.강좌는 심리학 313으로 응용회귀분석에 대해 배우며, R을 중심으로 진행하고 있다.Psychology 313의 의 세부적인 내용은 여기서 볼 수 있다.
+이 책의 해당 내용 슬라이드이다.
+주교재로 Computing Primer for Applied Linear Regression가 사용되고 있다.
+Weisberg, S. (2014). Computing Primer for Applied Linear Regression, 4th Edition, Using R.</description>
+    </item>
+    
     <item>
       <title>Methods Matter : Rcode 04. investigator-Designed Randomized Experiments</title>
       <link>https://8thplane.github.io/2022/01/15/methods-matter-rcode-04-investigator-designed-randomized-experiments/</link>
@@ -17,7 +29,7 @@
     </item>
     
     <item>
-      <title>Methods Matter : Rcode 00. reading data </title>
+      <title>Methods Matter : Rcode 00. reading data</title>
       <link>https://8thplane.github.io/2022/01/01/methods-matter-rcode-00-reading-data/</link>
       <pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate>
       
