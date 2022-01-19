@@ -6,7 +6,17 @@
     <description>Recent content on Methods Matter R code site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-KR</language>
-    <lastBuildDate>Mon, 17 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://8thplane.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 19 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://8thplane.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Causal Inference: What If by Miguel Hernan</title>
+      <link>https://8thplane.github.io/2022/01/19/causal-inference-what-if/</link>
+      <pubDate>Wed, 19 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://8thplane.github.io/2022/01/19/causal-inference-what-if/</guid>
+      <description>하버드대 Miguel Hernan 교수의 사이트 에 가면pdf로 배포중인 책과 데이터, 소스코드를 볼 수 있다.
+Hernán MA, Robins JM (2020). Causal Inference: What If. Boca Raton: Chapman &amp;amp; Hall/CRC.</description>
+    </item>
+    
     <item>
       <title>Mastering Econometrics with Joshua Angrist (MIT)</title>
       <link>https://8thplane.github.io/2022/01/17/mastering-econometrics-with-joshua-angrist-mit/</link>
