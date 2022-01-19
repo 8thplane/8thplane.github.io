@@ -1,0 +1,19 @@
+---
+title: 'Causal Inference: What If by Miguel Hernan'
+author: Jong Hoon Kim, Ph. D.
+date: '2022-01-19'
+slug: causal-inference-what-if
+categories:
+  - R
+tags:
+  - R Markdown
+---
+
+[하버드대 Miguel Hernan 교수의 사이트](https://www.hsph.harvard.edu/miguel-hernan/causal-inference-book/) 에 가면
+pdf로 배포중인 책과 데이터, 소스코드를 볼 수 있다.
+
+[Hernán MA, Robins JM (2020). Causal Inference: What If. Boca Raton: Chapman & Hall/CRC.](https://cdn1.sph.harvard.edu/wp-content/uploads/sites/1268/2021/03/ciwhatif_hernanrobins_30mar21.pdf) 
+
+
+
+
