@@ -6,7 +6,17 @@
     <description>Recent content in R on Methods Matter R code site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-KR</language>
-    <lastBuildDate>Wed, 19 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://8thplane.github.io/categories/r/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 22 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://8thplane.github.io/categories/r/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>the online version of Causal Inference: The Mixtape</title>
+      <link>https://8thplane.github.io/2022/01/22/the-online-version-of-causal-inference-the-mixtape/</link>
+      <pubDate>Sat, 22 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://8thplane.github.io/2022/01/22/the-online-version-of-causal-inference-the-mixtape/</guid>
+      <description>곽박사가 처음 소개해 준 인과추론 책이다. 기존 책에 비해서 실제 분석해 볼 수 있는 코드가 있다는 점에서 다음 공부할 책인듯 하다. STATA와 R 코드.. 거기에 blogdown으로 잘 정리해 둔 페이지. 도움이 많이 될 듯.
+the online version of Causal Inference: The Mixtape</description>
+    </item>
+    
     <item>
       <title>Causal Inference: What If by Miguel Hernan</title>
       <link>https://8thplane.github.io/2022/01/19/causal-inference-what-if/</link>
