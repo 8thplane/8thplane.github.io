@@ -6,7 +6,21 @@
     <description>Recent content in Posts on Methods Matter R code site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-KR</language>
-    <lastBuildDate>Sat, 22 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://8thplane.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 23 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://8thplane.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mastering ’Metrics by Joshua D. Angrist and Jörn-Steffen Pischke</title>
+      <link>https://8thplane.github.io/2022/01/23/mastering-metrics-by-joshua-d-angrist-and-j-rn-steffen-pischke/</link>
+      <pubDate>Sun, 23 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://8thplane.github.io/2022/01/23/mastering-metrics-by-joshua-d-angrist-and-j-rn-steffen-pischke/</guid>
+      <description>Joshua D. Angrist의 계량경제학책중 번역되어 있는 두권. 그중 비교적 더 최근에 나온Mastering ’Metrics을 읽고 있다. 현재 절반 정도 읽은 상태.
+간혹 원문을 보는 것이 필요하지만, 번역이 잘되어 있다.
+2장의 회귀분석과 부록 부분이 중요하다. 다 아는 회귀분석이라 생각했지만, 읽는데 시간이 꽤 걸린다.
+역시 이 책도 사이트가 있다. 사이트에는 STATA로 분석해 뒀지만, R 로 분석한 링크를 찾는 것도 쉽다. 강의하는 교수들의 링크를 들어가도 좋은 자료가 많다.
+http://www.masteringmetrics.com/
+R Code for Mastering ’Metrics</description>
+    </item>
+    
     <item>
       <title>the online version of Causal Inference: The Mixtape</title>
       <link>https://8thplane.github.io/2022/01/22/the-online-version-of-causal-inference-the-mixtape/</link>
