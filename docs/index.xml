@@ -100,13 +100,13 @@ blogdown. The theme was forked from @jrutheiser/hugo-lithium-theme and modified 
     </item>
     
     <item>
-      <title>Methods Matter : Rcode 07. Experimental Research When Participants Are Clustered Within Intact Groups</title>
-      <link>https://8thplane.github.io/2022/01/01/methods-matter-rcode-07-experimental-research-when-participants-are-clustered-within-intact-groups/</link>
+      <title>Methods Matter : Rcode 00. reading data</title>
+      <link>https://8thplane.github.io/2022/01/01/methods-matter-rcode-00-reading-data/</link>
       <pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://8thplane.github.io/2022/01/01/methods-matter-rcode-07-experimental-research-when-participants-are-clustered-within-intact-groups/</guid>
+      <guid>https://8thplane.github.io/2022/01/01/methods-matter-rcode-00-reading-data/</guid>
       <description>library 준비library(foreign)library(Hmisc)
-Stata용 데이터 읽기nyvoucher &amp;lt;- read.dta(&amp;quot;ch4_nyvoucher.dta&amp;quot;)str(nyvoucher)## &amp;#39;data.frame&amp;#39;: 521 obs. of 4 variables:## $ s_id : num 42 194 218 261 304 323 339 348 349 386 ...## $ voucher : num 0 0 1 1 1 1 1 1 1 0 ...## $ pre_ach : num 74 7.5 2.5 0 11 8.5 0 37 71 24 ...## $ post_ach: num 83 4 3.</description>
+Stata용 데이터 읽기nyvoucher &amp;lt;- read.dta(&amp;quot;D:/blogdown/methods_matter/content/ch4_nyvoucher.dta&amp;quot;)str(nyvoucher)## &amp;#39;data.frame&amp;#39;: 521 obs. of 4 variables:## $ s_id : num 42 194 218 261 304 323 339 348 349 386 ...## $ voucher : num 0 0 1 1 1 1 1 1 1 0 ...## $ pre_ach : num 74 7.5 2.5 0 11 8.5 0 37 71 24 ...## $ post_ach: num 83 4 3.</description>
     </item>
     
   </channel>
