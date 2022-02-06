@@ -12,16 +12,13 @@ tags:
 
 0. library 준비
 
-# install.packages("lme4")
 library(foreign)
 library(Hmisc)
-library(lme4)
 
 ```{r setup, include=FALSE}
 
 library(foreign)
 library(Hmisc)
-library(lme4)
 
 ```
 
@@ -30,41 +27,11 @@ library(lme4)
 
 ```{r}
 
-sfa_data <- read.dta("D:/blogdown/methods_matter/content/ch7_sfa.dta")
+nyvoucher <- read.dta("ch4_nyvoucher.dta")
 
-str(sfa_data)
+str(nyvoucher)
+head(nyvoucher)
+summary(nyvoucher)
+describe(nyvoucher)
 
-head(sfa_data)
-summary(sfa_data)
-describe(sfa_data)
-
-attach(sfa_data)
-
-```
-
-1. Base Model -- No Treatment Effect, Random Intercepts
-
-```{r}
-
-fit.0 <- lmer(wattack ~ 1 + (1|schid))
-summary(fit.0)
-
-```
-
-
-2. Model1 -- Adds Treatment Effect for sfa
-
-```{r}
-
-fit.1 <- lmer(wattack ~ 1 + sfa +(1|schid))
-summary(fit.1)
-```
-
-
-3. Model2 -- Adds sch_ppvt as a covariate
-
-```{r}
-
-fit.2 <- lmer(wattack ~ 1 + sfa + sch_ppvt +(1|schid))
-summary(fit.2)
 ```

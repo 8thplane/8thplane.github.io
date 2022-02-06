@@ -15,189 +15,82 @@ tags:
 <ol start="0" style="list-style-type: decimal">
 <li>library 준비</li>
 </ol>
-<div id="install.packageslme4" class="section level1">
-<h1>install.packages(“lme4”)</h1>
 <p>library(foreign)
-library(Hmisc)
-library(lme4)</p>
+library(Hmisc)</p>
 <ol start="0" style="list-style-type: decimal">
 <li>Stata용 데이터 읽기</li>
 </ol>
-<pre class="r"><code>sfa_data &lt;- read.dta(&quot;D:/blogdown/methods_matter/content/ch7_sfa.dta&quot;)
+<pre class="r"><code>nyvoucher &lt;- read.dta(&quot;ch4_nyvoucher.dta&quot;)
 
-str(sfa_data)</code></pre>
-<pre><code>## &#39;data.frame&#39;:    2334 obs. of  6 variables:
-##  $ schid   : int  1 1 1 1 1 1 1 1 1 1 ...
-##  $ stuid   : int  10158087 10217961 10486718 10540685 10750581 10757268 11115599 11232064 11280725 11304603 ...
-##  $ wattack : int  469 486 501 473 474 440 456 490 498 466 ...
-##  $ sfa     : int  1 1 1 1 1 1 1 1 1 1 ...
-##  $ ppvt    : int  89 83 90 91 102 87 89 91 87 88 ...
-##  $ sch_ppvt: num  90.6 90.6 90.6 90.6 90.6 ...
+str(nyvoucher)</code></pre>
+<pre><code>## &#39;data.frame&#39;:    521 obs. of  4 variables:
+##  $ s_id    : num  42 194 218 261 304 323 339 348 349 386 ...
+##  $ voucher : num  0 0 1 1 1 1 1 1 1 0 ...
+##  $ pre_ach : num  74 7.5 2.5 0 11 8.5 0 37 71 24 ...
+##  $ post_ach: num  83 4 3.5 26.5 2 15 23.5 52 60 13 ...
 ##  - attr(*, &quot;datalabel&quot;)= chr &quot;&quot;
-##  - attr(*, &quot;time.stamp&quot;)= chr &quot;28 Oct 2010 13:39&quot;
-##  - attr(*, &quot;formats&quot;)= chr [1:6] &quot;%8.0g&quot; &quot;%12.0g&quot; &quot;%8.0g&quot; &quot;%8.0g&quot; ...
-##  - attr(*, &quot;types&quot;)= int [1:6] 251 253 252 251 252 254
-##  - attr(*, &quot;val.labels&quot;)= chr [1:6] &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; ...
-##  - attr(*, &quot;var.labels&quot;)= chr [1:6] &quot;school id&quot; &quot;student id&quot; &quot;word attack posttest&quot; &quot;treatment&quot; ...
-##  - attr(*, &quot;expansion.fields&quot;)=List of 2
-##   ..$ : chr [1:3] &quot;_dta&quot; &quot;iis&quot; &quot;schid&quot;
-##   ..$ : chr [1:3] &quot;_dta&quot; &quot;_TSpanel&quot; &quot;schid&quot;
+##  - attr(*, &quot;time.stamp&quot;)= chr &quot;13 Oct 2010 11:37&quot;
+##  - attr(*, &quot;formats&quot;)= chr [1:4] &quot;%7.0g&quot; &quot;%9.0g&quot; &quot;%9.0g&quot; &quot;%9.0g&quot;
+##  - attr(*, &quot;types&quot;)= int [1:4] 255 254 254 254
+##  - attr(*, &quot;val.labels&quot;)= chr [1:4] &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot;
+##  - attr(*, &quot;var.labels&quot;)= chr [1:4] &quot;student id&quot; &quot;&quot; &quot;&quot; &quot;&quot;
+##  - attr(*, &quot;expansion.fields&quot;)=List of 8
+##   ..$ : chr [1:3] &quot;_dta&quot; &quot;ReS_Xij&quot; &quot;q4_f q4_m q4_l tempnam q4_g s_id public q4_s q4_c&quot;
+##   ..$ : chr [1:3] &quot;_dta&quot; &quot;ReS_str&quot; &quot;0&quot;
+##   ..$ : chr [1:3] &quot;_dta&quot; &quot;ReS_jv&quot; &quot;1 2 3 4 5 6 7 8 9&quot;
+##   ..$ : chr [1:3] &quot;_dta&quot; &quot;ReS_j&quot; &quot;kid_numb&quot;
+##   ..$ : chr [1:3] &quot;_dta&quot; &quot;ReS_ver&quot; &quot;v.2&quot;
+##   ..$ : chr [1:3] &quot;_dta&quot; &quot;ReS_i&quot; &quot;mpr_fam&quot;
+##   ..$ : chr [1:3] &quot;_dta&quot; &quot;strata&quot; &quot;s_strata&quot;
+##   ..$ : chr [1:3] &quot;_dta&quot; &quot;pweight&quot; &quot;r_weight2&quot;
 ##  - attr(*, &quot;version&quot;)= int 12</code></pre>
-<pre class="r"><code>head(sfa_data)</code></pre>
-<pre><code>##   schid    stuid wattack sfa ppvt sch_ppvt
-## 1     1 10158087     469   1   89 90.63918
-## 2     1 10217961     486   1   83 90.63918
-## 3     1 10486718     501   1   90 90.63918
-## 4     1 10540685     473   1   91 90.63918
-## 5     1 10750581     474   1  102 90.63918
-## 6     1 10757268     440   1   87 90.63918</code></pre>
-<pre class="r"><code>summary(sfa_data)</code></pre>
-<pre><code>##      schid           stuid             wattack           sfa       
-##  Min.   : 1.00   Min.   :10012420   Min.   :440.0   Min.   :0.000  
-##  1st Qu.: 9.00   1st Qu.:31292972   1st Qu.:466.0   1st Qu.:0.000  
-##  Median :21.00   Median :32141825   Median :479.0   Median :1.000  
-##  Mean   :20.83   Mean   :29735658   Mean   :478.5   Mean   :0.521  
-##  3rd Qu.:32.00   3rd Qu.:32648652   3rd Qu.:492.0   3rd Qu.:1.000  
-##  Max.   :41.00   Max.   :33049570   Max.   :545.0   Max.   :1.000  
-##       ppvt          sch_ppvt     
-##  Min.   : 40.0   Min.   : 66.06  
-##  1st Qu.: 81.0   1st Qu.: 83.49  
-##  Median : 90.0   Median : 88.91  
-##  Mean   : 90.4   Mean   : 90.07  
-##  3rd Qu.:100.0   3rd Qu.: 97.89  
-##  Max.   :144.0   Max.   :107.68</code></pre>
-<pre class="r"><code>describe(sfa_data)</code></pre>
-<pre><code>## sfa_data 
+<pre class="r"><code>head(nyvoucher)</code></pre>
+<pre><code>##   s_id voucher pre_ach post_ach
+## 1   42       0    74.0     83.0
+## 2  194       0     7.5      4.0
+## 3  218       1     2.5      3.5
+## 4  261       1     0.0     26.5
+## 5  304       1    11.0      2.0
+## 6  323       1     8.5     15.0</code></pre>
+<pre class="r"><code>summary(nyvoucher)</code></pre>
+<pre><code>##       s_id          voucher          pre_ach         post_ach    
+##  Min.   :   42   Min.   :0.0000   Min.   : 0.00   Min.   : 0.00  
+##  1st Qu.: 4187   1st Qu.:0.0000   1st Qu.: 6.50   1st Qu.: 8.00  
+##  Median :11141   Median :1.0000   Median :15.50   Median :18.00  
+##  Mean   :10436   Mean   :0.5585   Mean   :20.16   Mean   :23.87  
+##  3rd Qu.:15928   3rd Qu.:1.0000   3rd Qu.:28.50   3rd Qu.:35.00  
+##  Max.   :21825   Max.   :1.0000   Max.   :92.00   Max.   :89.00</code></pre>
+<pre class="r"><code>describe(nyvoucher)</code></pre>
+<pre><code>## nyvoucher 
 ## 
-##  6  Variables      2334  Observations
+##  4  Variables      521  Observations
 ## --------------------------------------------------------------------------------
-## schid 
+## s_id 
 ##        n  missing distinct     Info     Mean      Gmd      .05      .10 
-##     2334        0       41    0.999    20.83    14.17        2        3 
+##      521        0      521        1    10436     7638      913     1535 
 ##      .25      .50      .75      .90      .95 
-##        9       21       32       38       40 
+##     4187    11141    15928    19371    20728 
 ## 
-## lowest :  1  2  3  4  5, highest: 37 38 39 40 41
+## lowest :    42   194   218   261   304, highest: 21796 21808 21814 21816 21825
 ## --------------------------------------------------------------------------------
-## stuid 
-##        n  missing distinct     Info     Mean      Gmd      .05      .10 
-##     2334        0     2334        1 29735658  4793322 13955002 17480065 
-##      .25      .50      .75      .90      .95 
-## 31292973 32141825 32648653 32972583 33023645 
-## 
-## lowest : 10012420 10013850 10145920 10151020 10158087
-## highest: 33048930 33049350 33049370 33049550 33049570
-## --------------------------------------------------------------------------------
-## wattack 
-##        n  missing distinct     Info     Mean      Gmd      .05      .10 
-##     2334        0       45    0.998    478.5    22.36      440      449 
-##      .25      .50      .75      .90      .95 
-##      466      479      492      503      509 
-## 
-## lowest : 440 449 456 460 464, highest: 525 528 532 537 545
-## --------------------------------------------------------------------------------
-## sfa 
+## voucher 
 ##        n  missing distinct     Info      Sum     Mean      Gmd 
-##     2334        0        2    0.749     1216    0.521   0.4993 
+##      521        0        2     0.74      291   0.5585   0.4941 
 ## 
 ## --------------------------------------------------------------------------------
-## ppvt 
+## pre_ach 
 ##        n  missing distinct     Info     Mean      Gmd      .05      .10 
-##     2334        0       91        1     90.4    16.84     66.0     72.0 
+##      521        0      123        1    20.16    19.47      0.5      1.5 
 ##      .25      .50      .75      .90      .95 
-##     81.0     90.0    100.0    111.0    116.3 
+##      6.5     15.5     28.5     45.0     57.5 
 ## 
-## lowest :  40  43  44  47  48, highest: 136 137 139 142 144
+## lowest :  0.0  0.5  1.0  1.5  2.0, highest: 82.5 84.0 84.5 87.5 92.0
 ## --------------------------------------------------------------------------------
-## sch_ppvt 
+## post_ach 
 ##        n  missing distinct     Info     Mean      Gmd      .05      .10 
-##     2334        0       41    0.999    90.07    9.008    81.94    82.47 
+##      521        0      131        1    23.87     20.9      2.5      4.0 
 ##      .25      .50      .75      .90      .95 
-##    83.49    88.91    97.89   101.14   101.56 
+##      8.0     18.0     35.0     52.0     60.5 
 ## 
-## lowest :  66.05921  76.65672  81.17911  81.94211  82.47005
-## highest: 101.14480 101.56311 101.85075 103.13793 107.68367
+## lowest :  0.0  0.5  1.0  1.5  2.0, highest: 82.0 83.0 84.5 86.5 89.0
 ## --------------------------------------------------------------------------------</code></pre>
-<pre class="r"><code>attach(sfa_data)</code></pre>
-<ol style="list-style-type: decimal">
-<li>Base Model – No Treatment Effect, Random Intercepts</li>
-</ol>
-<pre class="r"><code>fit.0 &lt;- lmer(wattack ~ 1 + (1|schid))
-summary(fit.0)</code></pre>
-<pre><code>## Linear mixed model fit by REML [&#39;lmerMod&#39;]
-## Formula: wattack ~ 1 + (1 | schid)
-## 
-## REML criterion at convergence: 20147.7
-## 
-## Scaled residuals: 
-##     Min      1Q  Median      3Q     Max 
-## -2.9374 -0.6130  0.0198  0.6746  4.1890 
-## 
-## Random effects:
-##  Groups   Name        Variance Std.Dev.
-##  schid    (Intercept)  79.14    8.896  
-##  Residual             314.19   17.725  
-## Number of obs: 2334, groups:  schid, 41
-## 
-## Fixed effects:
-##             Estimate Std. Error t value
-## (Intercept)  477.535      1.451   329.1</code></pre>
-<ol start="2" style="list-style-type: decimal">
-<li>Model1 – Adds Treatment Effect for sfa</li>
-</ol>
-<pre class="r"><code>fit.1 &lt;- lmer(wattack ~ 1 + sfa +(1|schid))
-summary(fit.1)</code></pre>
-<pre><code>## Linear mixed model fit by REML [&#39;lmerMod&#39;]
-## Formula: wattack ~ 1 + sfa + (1 | schid)
-## 
-## REML criterion at convergence: 20141.5
-## 
-## Scaled residuals: 
-##     Min      1Q  Median      3Q     Max 
-## -2.9403 -0.6122  0.0254  0.6789  4.2049 
-## 
-## Random effects:
-##  Groups   Name        Variance Std.Dev.
-##  schid    (Intercept)  75.69    8.70   
-##  Residual             314.23   17.73   
-## Number of obs: 2334, groups:  schid, 41
-## 
-## Fixed effects:
-##             Estimate Std. Error t value
-## (Intercept)  475.302      2.035 233.616
-## sfa            4.366      2.844   1.535
-## 
-## Correlation of Fixed Effects:
-##     (Intr)
-## sfa -0.715</code></pre>
-<ol start="3" style="list-style-type: decimal">
-<li>Model2 – Adds sch_ppvt as a covariate</li>
-</ol>
-<pre class="r"><code>fit.2 &lt;- lmer(wattack ~ 1 + sfa + sch_ppvt +(1|schid))
-summary(fit.2)</code></pre>
-<pre><code>## Linear mixed model fit by REML [&#39;lmerMod&#39;]
-## Formula: wattack ~ 1 + sfa + sch_ppvt + (1 | schid)
-## 
-## REML criterion at convergence: 20127.2
-## 
-## Scaled residuals: 
-##     Min      1Q  Median      3Q     Max 
-## -2.9480 -0.6144  0.0319  0.6692  4.2025 
-## 
-## Random effects:
-##  Groups   Name        Variance Std.Dev.
-##  schid    (Intercept)  49.33    7.024  
-##  Residual             314.18   17.725  
-## Number of obs: 2334, groups:  schid, 41
-## 
-## Fixed effects:
-##             Estimate Std. Error t value
-## (Intercept) 419.8075    12.6428  33.205
-## sfa           3.5691     2.3556   1.515
-## sch_ppvt      0.6229     0.1408   4.425
-## 
-## Correlation of Fixed Effects:
-##          (Intr) sfa   
-## sfa      -0.006       
-## sch_ppvt -0.991 -0.089</code></pre>
-</div>
