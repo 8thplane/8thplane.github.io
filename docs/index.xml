@@ -6,7 +6,17 @@
     <description>Recent content on Methods Matter R code site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-KR</language>
-    <lastBuildDate>Sun, 23 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://8thplane.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 06 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://8thplane.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Methods Matter:Rcode 07. Experimental Research When Participants Are Clustered Within Intact Groups</title>
+      <link>https://8thplane.github.io/2022/02/06/experimental-research-when-participants-are-clustered-within-intact-groups/</link>
+      <pubDate>Sun, 06 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://8thplane.github.io/2022/02/06/experimental-research-when-participants-are-clustered-within-intact-groups/</guid>
+      <description>library 준비install.packages(“lme4”)library(foreign)library(Hmisc)library(lme4)
+Stata용 데이터 읽기sfa_data &amp;lt;- read.dta(&amp;quot;D:/blogdown/methods_matter/content/ch7_sfa.dta&amp;quot;)str(sfa_data)## &amp;#39;data.frame&amp;#39;: 2334 obs. of 6 variables:## $ schid : int 1 1 1 1 1 1 1 1 1 1 ...## $ stuid : int 10158087 10217961 10486718 10540685 10750581 10757268 11115599 11232064 11280725 11304603 ...## $ wattack : int 469 486 501 473 474 440 456 490 498 466 .</description>
+    </item>
+    
     <item>
       <title>Mastering ’Metrics by Joshua D. Angrist and Jörn-Steffen Pischke</title>
       <link>https://8thplane.github.io/2022/01/23/mastering-metrics-by-joshua-d-angrist-and-j-rn-steffen-pischke/</link>
@@ -90,13 +100,13 @@ blogdown. The theme was forked from @jrutheiser/hugo-lithium-theme and modified 
     </item>
     
     <item>
-      <title>Methods Matter : Rcode 00. reading data</title>
-      <link>https://8thplane.github.io/2022/01/01/methods-matter-rcode-00-reading-data/</link>
+      <title>Methods Matter : Rcode 07. Experimental Research When Participants Are Clustered Within Intact Groups</title>
+      <link>https://8thplane.github.io/2022/01/01/methods-matter-rcode-07-experimental-research-when-participants-are-clustered-within-intact-groups/</link>
       <pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://8thplane.github.io/2022/01/01/methods-matter-rcode-00-reading-data/</guid>
-      <description>Stata용 데이터 읽기library(foreign)library(Hmisc)
-nyvoucher &amp;lt;- read.dta(&amp;quot;ch4_nyvoucher.dta&amp;quot;)str(nyvoucher)## &amp;#39;data.frame&amp;#39;: 521 obs. of 4 variables:## $ s_id : num 42 194 218 261 304 323 339 348 349 386 ...## $ voucher : num 0 0 1 1 1 1 1 1 1 0 ...## $ pre_ach : num 74 7.5 2.5 0 11 8.5 0 37 71 24 ...## $ post_ach: num 83 4 3.</description>
+      <guid>https://8thplane.github.io/2022/01/01/methods-matter-rcode-07-experimental-research-when-participants-are-clustered-within-intact-groups/</guid>
+      <description>library 준비library(foreign)library(Hmisc)
+Stata용 데이터 읽기nyvoucher &amp;lt;- read.dta(&amp;quot;ch4_nyvoucher.dta&amp;quot;)str(nyvoucher)## &amp;#39;data.frame&amp;#39;: 521 obs. of 4 variables:## $ s_id : num 42 194 218 261 304 323 339 348 349 386 ...## $ voucher : num 0 0 1 1 1 1 1 1 1 0 ...## $ pre_ach : num 74 7.5 2.5 0 11 8.5 0 37 71 24 ...## $ post_ach: num 83 4 3.</description>
     </item>
     
   </channel>
