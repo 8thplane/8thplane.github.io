@@ -1,8 +1,8 @@
 ---
-title: 'Methods Matter : Rcode 07. Experimental Research When Participants Are Clustered Within Intact Groups'
+title: 'Methods Matter : Rcode 00. reading data'
 author: Jong Hoon Kim, Ph. D.
 date: '2022-01-01'
-slug: methods-matter-rcode-07-Experimental Research When Participants Are Clustered Within Intact Groups
+slug: Methods Matter : Rcode 00. reading data
 categories:
   - R
 tags:
